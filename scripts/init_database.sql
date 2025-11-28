@@ -13,11 +13,11 @@ WARNING:
 	and ensure you have proper backups before running this script.
 */
 
--- Drop and recreate the 'DataWarehouse' database
-DROP DATABASE IF EXISTS DATAWAREHOUSE;
+-- Drop and recreate the 'datawarehouse' database
+DROP DATABASE IF EXISTS datawarehouse;
 
--- Create the 'DataWarehouse' database
-CREATE DATABASE DataWarehouse;
+-- Create the 'datawarehouse' database
+CREATE DATABASE datawarehouse;
 
 -- Create Schemas
 CREATE SCHEMA bronze;
