@@ -16,36 +16,145 @@ Usage Example:
 ===============================================================================
 */
 
-CREATE OR REPLACE PROCEDURE bronze.load_bronze
-(
-)
+CREATE OR REPLACE PROCEDURE bronze.load_bronze ()
 LANGUAGE plpgsql 
-AS $BODY$
-	BEGIN
-		TRUNCATE TABLE bronze.crm_cust_info;
-		COPY bronze.crm_cust_info (cst_id, cst_key, cst_firstname, cst_lastname, cst_marital_status, cst_gndr, cst_create_date) 
-		FROM '/private/tmp/cust_info.csv' WITH (FORMAT CSV, HEADER TRUE);
+AS $body$
+BEGIN
+DO $$
+DECLARE
+	affected_rows_count INTEGER;
+	start_time timestamptz := clock_timestamp();
+    end_time timestamptz;
+    duration interval;
+BEGIN
+	RAISE NOTICE '========================================';
+	RAISE NOTICE 'Loading Bronze Layer';
+	RAISE NOTICE '========================================';
 
-		TRUNCATE TABLE bronze.crm_prd_info;
-		COPY bronze.crm_prd_info (prd_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt) 
-		FROM '/private/tmp/prd_info.csv' WITH (FORMAT CSV, HEADER TRUE); 
+	RAISE NOTICE '----------------------------------------';
+	RAISE NOTICE 'Loading CRM Tables';
+	RAISE NOTICE '----------------------------------------';	
+	
+	RAISE NOTICE '>> Truncating Table: bronze.crm_cust_info';
+	TRUNCATE TABLE bronze.crm_cust_info;
 
-		TRUNCATE TABLE bronze.crm_sales_details;
-		COPY bronze.crm_sales_details (sls_ord_num, sls_prd_key, sls_cust_id, sls_order_dt, sls_ship_dt, sls_due_dt, sls_sales, sls_quantity, sls_price) 
-		FROM '/private/tmp/sales_details.csv' WITH (FORMAT CSV, HEADER TRUE);
+	RAISE NOTICE '>> Inserting Data Into: bronze.crm_cust_info';
+	COPY bronze.crm_cust_info
+		(cst_id, 
+		cst_key, 
+		cst_firstname, 
+		cst_lastname, 
+		cst_marital_status, 
+		cst_gndr, 
+		cst_create_date)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_crm/cust_info.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	RAISE NOTICE '----------------------------------------';
+	
+	RAISE NOTICE '>> Truncating Table: bronze.crm_prd_info';
+	TRUNCATE TABLE bronze.crm_prd_info;
 
-		TRUNCATE TABLE bronze.erp_cust_az12;
-		COPY bronze.erp_cust_az12 (cid, bdate, gen) 
-		FROM '/private/tmp/CUST_AZ12.csv' WITH (FORMAT CSV, HEADER TRUE);
+	RAISE NOTICE '>> Inserting Data Into: bronze.crm_prd_info';
+	COPY bronze.crm_prd_info
+		(prd_id, 
+		prd_key, 
+		prd_nm, 
+		prd_cost, 
+		prd_line, 
+		prd_start_dt, 
+		prd_end_dt)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_crm/prd_info.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	RAISE NOTICE '----------------------------------------';
+	
+	RAISE NOTICE '>> Truncating Table: bronze.crm_sales_details';
+	TRUNCATE TABLE bronze.crm_sales_details;
 
-		TRUNCATE TABLE bronze.erp_loc_a101;
-		COPY bronze.erp_loc_a101 (cid, cntry) 
-		FROM '/private/tmp/LOC_A101.csv' WITH (FORMAT CSV, HEADER TRUE);
+	RAISE NOTICE '>> Inserting Data Into: bronze.crm_sales_details';
+	COPY bronze.crm_sales_details
+		(sls_ord_num, 
+		sls_prd_key, 
+		sls_cust_id, 
+		sls_order_dt, 
+		sls_ship_dt, 
+		sls_due_dt, 
+		sls_sales, 
+		sls_quantity, 
+		sls_price)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_crm/sales_details.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	
+	RAISE NOTICE '----------------------------------------';
+	RAISE NOTICE 'Loading ERP Tables';
+	RAISE NOTICE '----------------------------------------';	
 
-		TRUNCATE TABLE bronze.erp_px_cat_g1v2;
-		COPY bronze.erp_px_cat_g1v2 (id, cat, subcat, maintenance) 
-		FROM '/private/tmp/PX_CAT_G1V2.csv' WITH (FORMAT CSV, HEADER TRUE);
-	end; 
-$BODY$
+	RAISE NOTICE '>> Truncating Table: bronze.erp_cust_az12';
+	TRUNCATE TABLE bronze.erp_cust_az12;
 
-CALL bronze.load_bronze()
+	RAISE NOTICE '>> Inserting Data Into: bronze.erp_cust_az12';
+	COPY bronze.erp_cust_az12
+		(cid,
+		bdate,
+		gen)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_erp/CUST_AZ12.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	RAISE NOTICE '----------------------------------------';
+
+	RAISE NOTICE '>> Truncating Table: bronze.erp_loc_a101';
+	TRUNCATE TABLE bronze.erp_loc_a101;
+
+	RAISE NOTICE '>> Inserting Data Into: bronze.erp_loc_a101';
+	COPY bronze.erp_loc_a101
+		(cid,
+		cntry)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_erp/LOC_A101.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	RAISE NOTICE '----------------------------------------';
+
+	RAISE NOTICE '>> Truncating Table: bronze.erp_px_cat_g1v2';
+	TRUNCATE TABLE bronze.erp_px_cat_g1v2;
+
+	RAISE NOTICE '>> Inserting Data Into: bronze.erp_px_cat_g1v2';
+	COPY bronze.erp_px_cat_g1v2
+		(id,
+		cat,
+		subcat,
+		maintenance)
+	FROM '/Users/sreylis/Documents/SQL/DataWarehousProject/Dataset/source_erp/PX_CAT_G1V2.csv'
+	WITH (FORMAT CSV, HEADER TRUE);
+	GET DIAGNOSTICS affected_rows_count = ROW_COUNT;
+	RAISE NOTICE '(Rows Affected:%)', affected_rows_count;
+	end_time := clock_timestamp();
+    duration := end_time - start_time;
+    RAISE NOTICE '>> Load Duration: %', duration;
+	RAISE NOTICE '----------------------------------------';
+END $$;
+END;
+$body$
+
+CALL bronze.load_bronze();
