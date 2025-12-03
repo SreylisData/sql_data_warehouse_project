@@ -133,8 +133,7 @@ ORDER BY bdate ASC;
 -- Data Standardization & Consistency
 SELECT DISTINCT
 	gen
-FROM
-	silver.erp_cust_az12;
+FROM silver.erp_cust_az12;
 
 -- ====================================================================
 -- Checking 'silver.erp_loc_a101'
@@ -154,8 +153,7 @@ ORDER BY cntry;
 -- Expectation: No Results
 SELECT
 	*
-FROM
-	silver.erp_px_cat_g1v2
+FROM silver.erp_px_cat_g1v2
 WHERE cat != TRIM(cat)
 	OR subcat != TRIM(subcat)
 	OR maintenance != TRIM(maintenance);
