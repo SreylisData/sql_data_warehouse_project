@@ -7,16 +7,16 @@
 **• Columns**:
 | Column Name | Data Type | Description |
 | ------------- | ------------- | ------------- |
-| customer_key | INT | ------------- |
-| customer_id  | INT | ------------- |
-| customer_number | VARCHAR(50) |
-| first_name | VARCHAR(50) |
-| last_name | VARCHAR(50) |
-| country | VARCHAR(50) |
-| marital_status | VARCHAR(50) |
-| gender | VARCHAR(50) |
-| birthdate | DATE |
-| create_date | DATE |
+| customer_key | INT | Surrogate key uniquely identifying each customer record in the customers dimension table. |
+| customer_id  | INT | Unique numerical identifier assigned to each customer. |
+| customer_number | VARCHAR(50) | Alphanumeric identifier representing the customer, used for tracking and referencing. |
+| first_name | VARCHAR(50) | The customer's first name. |
+| last_name | VARCHAR(50) | The customer's ladt name. |
+| country | VARCHAR(50) | The customer's country of residence (e.g. 'United Kingdom'). |
+| marital_status | VARCHAR(50) | The customer's marital status (e.g. 'Single', 'Married'). |
+| gender | VARCHAR(50) | The customer's gender (e.g. 'Female', 'Male', 'n/a'). |
+| birthdate | DATE | The customer's date of birth, formatted as YYYY-MM-DD (e.g. 1995-01-28). |
+| create_date | DATE | The date and time when the customer record was created in the system. |
 
 ---
 
@@ -26,7 +26,7 @@
 **• Columns**:
 | Column Name | Data Type | Description |
 | ------------- | ------------- | ------------- |
-| product_key | INT | ------------- |
+| product_key | INT | Surrogate key uniquely identifying each product record in the products dimension table. |
 | product_id  | INT | ------------- |
 | product_number | VARCHAR(50) |
 | product_name | VARCHAR(50) |
