@@ -36,11 +36,9 @@ This project involves:
 
 ---
 
-## 🛠️ Important Links & Tools:
+## 🔗 Important Links & Tools:
 
-Everything is for Free!
 - **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
 - **[Notion Project Steps](https://www.notion.so/sreylisrin/Data-Warehouse-Project-24c061488edd80ef98eac5bf6336d7a8?source=copy_link):** Access project tasks.
 
 ---
