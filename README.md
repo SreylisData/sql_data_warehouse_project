@@ -55,7 +55,7 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
   
 ---
-## ☕ Stay Connected
+## 📩 Stay Connected
 
 Hello, I'm **Sreylis**! I'm a Data Analyst who appreciates data's ability to tell stories, solve problems, and guide meaningful decisions. 
 Let's stay in touch! Feel free to connect with me on the following platforms:
