@@ -1,10 +1,7 @@
-# SQL Data Warehouse/Data Engineering
-Building a modern data warehouse with PostgreSQL, including ETL processes, data modelling, and analytics.
+# Data Warehouse and Analytics Project 
+Welcome to the **Data Warehouse and Analytics Project** repository! 
 
-# Data Warehouse and Analytics Project
-
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+This project showcases an end-to-end data warehousing and analytics workflow—from constructing a PostgreSQL data warehouse to delivering meaningful insights. Built as a portfolio piece, it reflects strong adherence to data engineering and analytics best practices, including ETL development, data modeling, and analytical reporting.
 
 ---
 ## 🏗️ Data Architecture
@@ -21,12 +18,12 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 
 This project involves:
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+1. **Data Architecture**: Building a modern data warehouse using the Medallion Architecture with **Bronze**, **Silver**, and **Gold** layers.
+2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into a structured warehouse.
+3. **Data Modeling**: Creating optimized fact and dimension tables for high-performance analytical querying.
+4. **Analytics & Reporting**: Producing SQL-based analyses and dashboards that deliver actionable insights.
 
-🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
+Skills demonstrated:
 - SQL Development
 - Data Architect
 - Data Engineering  
