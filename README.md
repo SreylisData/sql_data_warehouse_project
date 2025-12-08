@@ -26,7 +26,7 @@ Technical skills demonstrated:
 - SQL Development
 - Data Architect
 - Data Engineering  
-- ETL Pipeline Developmet
+- ETL Pipeline Development
 - Data Modeling  
 - Data Analytics  
 
