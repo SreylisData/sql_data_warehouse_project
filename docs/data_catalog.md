@@ -52,7 +52,7 @@
 | order_date | DATE | The date when the order was placed. |
 | shipping_date | DATE | The date when the order was shipped to the customer. |
 | due_date | DATE | The date when the order payment was due. |
-| sales | INT | The total monetary value of the sale for the line item, in whole currency units (e.g., 25). |
+| sales | INT | The total monetary value of the sale for the line item, in whole currency units (e.g., 25) (Sales = Quantity * Price). |
 | quantity | INT | The number of units of the product ordered for the line item (e.g., 1). |
 | price | INT | The price per unit of the product for the line item, in whole currency units (e.g., 25). |
 
