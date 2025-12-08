@@ -31,12 +31,12 @@
 | product_number | VARCHAR(50) | A structured alphanumeric code representing the product, often used for categorization or inventory. | 
 | product_name | VARCHAR(50) | Descriptive name of the product, including key details such as type, color, and size. |
 | category_id | VARCHAR(50) | A unique identifier for the product's category, linking to its high-level classification. |
-| category | VARCHAR(50) | The broader classification of the product (e.g., Bikes, Components) to group related items. |
-| subcategory | VARCHAR(50) | A more detailed classification of the product within the category, such as product type. |
+| category | VARCHAR(50) | The broader classification of the product (e.g., Bikes, Clothing) to group related items. |
+| subcategory | VARCHAR(50) | A more detailed classification of the product within the category, such as product type (e.g. Bike Racks, Shorts). |
 | maintenance | VARCHAR(50) | Indicates whether the product requires maintenance (e.g., 'Yes', 'No'). |
 | cost | INT | The cost or base price of the product, measured in monetary units. |
 | product_line | VARCHAR(50) | The specific product line or series to which the product belongs (e.g., Road, Mountain). |
-| start_date | DATE | The date when the product became available for sale or use, stored in |
+| start_date | DATE | The date when the product became available for sale or use. |
 
 ---
 
