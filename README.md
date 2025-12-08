@@ -23,11 +23,11 @@ This project involves:
 3. **Data Modeling**: Creating optimized fact and dimension tables for high-performance analytical querying.
 4. **Analytics & Reporting**: Producing SQL-based analyses and dashboards that deliver actionable insights.
 
-Skills demonstrated:
+Technical skills demonstrated:
 - SQL Development
 - Data Architect
 - Data Engineering  
-- ETL Pipeline Developer  
+- ETL Pipeline Developmet
 - Data Modeling  
 - Data Analytics  
 
@@ -45,7 +45,7 @@ Skills demonstrated:
 ### Building the Data Warehouse (Data Engineering)
 
 #### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+Develop a modern data warehouse using PostgreSQL to consolidate sales data, enabling analytical reporting and informed decision-making.
 
 #### Specifications
 - **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
