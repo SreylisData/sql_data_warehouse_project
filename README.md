@@ -56,7 +56,7 @@ Develop a modern data warehouse using PostgreSQL to consolidate sales data, enab
 ---
 ## 📩 Stay Connected
 
-Hello, I'm **Sreylis**! I'm a Data Analyst who appreciates data's ability to tell stories, solve problems, and guide meaningful decisions. 
+Hello, I'm **Sreylis**! I'm a Data Analyst who untilize data to tell stories, solve problems, and guide meaningful decisions. 
 Let's stay in touch! Feel free to connect with me on the following platforms:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sreylis-rin-4679051a1/)
