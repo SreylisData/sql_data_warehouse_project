@@ -39,9 +39,8 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 
 ## 🔗 Important Links & Tools:
 
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[Notion Project Steps](https://www.notion.so/sreylisrin/Data-Warehouse-Project-24c061488edd80ef98eac5bf6336d7a8?source=copy_link):** Access to project tasks.
-
+- **[Datasets](datasets/):** Access the project datasets (csv files).
+- **[Notion Project Steps](https://www.notion.so/sreylisrin/Data-Warehouse-Project-24c061488edd80ef98eac5bf6336d7a8?source=copy_link):** Access the project tasks.
 ---
 
 ## 🚀 Project Requirements
