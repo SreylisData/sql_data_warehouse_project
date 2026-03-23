@@ -73,12 +73,14 @@ The ETL pipeline includes:
 ---
 ## Repository Structure
 
+```
 sql_data_warehouse_project/
-│── data/              # Raw and processed datasets
-│── scripts/           # ETL and transformation SQL scripts
-│── models/            # Data models (fact & dimension tables)
+│── datasets/              # Raw and processed datasets
 │── docs/              # Architecture diagrams and documentation
+│── scripts/           # ETL and transformation SQL scripts
+│── tests/              # Query testing
 │── README.md          # Project documentation
+```
 
 ---
 ## What I Learned
